@@ -73,6 +73,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -297,6 +299,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.textBox16);
+            this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.textBox9);
             this.groupBox3.Controls.Add(this.label9);
@@ -534,6 +538,23 @@
             this.comboBox1.TabIndex = 7;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(590, 53);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(218, 25);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Puntaje por Acumular";
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(595, 111);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(178, 31);
+            this.textBox16.TabIndex = 9;
+            this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
+            // 
             // GestionarReservasView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -608,5 +629,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox16;
     }
 }

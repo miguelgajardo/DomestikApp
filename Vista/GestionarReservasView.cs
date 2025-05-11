@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DomestikApp.Controlador;
+using DomestikApp.Data;
 using DomestikApp.Modelo;
 
 namespace DomestikApp.Vista
@@ -21,6 +22,7 @@ namespace DomestikApp.Vista
             comboBox1.SelectedItem = TipoReserva.Economica;
             UpdateReservaText();
             UpdateReservaTotal();
+            UpdatePuntaje();
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
       }
@@ -154,6 +156,7 @@ namespace DomestikApp.Vista
         {
             UpdateReservaText();
             UpdateReservaTotal();
+            UpdatePuntaje();
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -166,6 +169,21 @@ namespace DomestikApp.Vista
            
         }
 
+        private void UpdatePuntaje()
+        {
+            if (comboBox1.SelectedItem.Equals(TipoReserva.Economica))
+            {
+                textBox16.Text = Tarifas.Economica.Puntaje.ToString();
+            }
+            else if (comboBox1.SelectedItem.Equals(TipoReserva.Turista))
+            {
+                textBox16.Text = Tarifas.Turista.Puntaje.ToString();
+            }
+            else
+            {
+                textBox16.Text = Tarifas.Ejecutivo.Puntaje.ToString();
+            }
+        }
         private void UpdateReservaTotal()
         {
             Reserva reserva = new Reserva();
@@ -182,6 +200,11 @@ namespace DomestikApp.Vista
             {
                 textBox9.Text = Utils.GestionReservas.calcularValorReserva(reserva).ToString();
             }
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
