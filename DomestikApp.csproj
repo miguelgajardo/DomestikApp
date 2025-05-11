@@ -101,6 +101,9 @@
   <ItemGroup>
     <Compile Include="Configuration\Conexion.cs" />
     <Compile Include="Controlador\LoginController.cs" />
+    <Compile Include="Controlador\PasajeroDAO.cs" />
+    <Compile Include="Controlador\ReservaDAO.cs" />
+    <Compile Include="Controlador\VueloDAO.cs" />
     <Compile Include="Data\Destinos.cs" />
     <Compile Include="Data\Tarifas.cs" />
     <Compile Include="Modelo\Credencial.cs" />

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DomestikApp.Modelo;
 
 namespace DomestikApp.Vista
 {
@@ -24,6 +25,19 @@ namespace DomestikApp.Vista
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Vuelo vuelo = new Vuelo();
+            vuelo.fecha = dateTimePicker1.Value.Date;
+
 
         }
     }
