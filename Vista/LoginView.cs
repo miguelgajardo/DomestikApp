@@ -21,11 +21,9 @@ namespace DomestikApp.Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Vista.DashboardView dashboard = new Vista.DashboardView();
-            dashboard.Show();
-            //Boolean isLogin = true;
-            //LoginController loginControl = new LoginController();
-            /* if (textBox1.Text != null && textBox2.Text != null)
+            Boolean isLogin = true;
+            LoginController loginControl = new LoginController();
+             if (textBox1.Text != null && textBox2.Text != null)
             {
                 Credencial credencial = new Credencial(textBox1.Text, textBox2.Text);
                 isLogin = loginControl.login(credencial);
@@ -42,7 +40,17 @@ namespace DomestikApp.Vista
             else
             {
                 MessageBox.Show("Ingrese valores válidos para el inicio de sesión!");
-            } */
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

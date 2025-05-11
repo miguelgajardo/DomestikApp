@@ -16,7 +16,7 @@ namespace DomestikApp.Controlador
         {
             Boolean existe = false;
             MySqlConnection mySqlConnection = Conexion.openConnection();
-            MySqlCommand mySqlCommand = new MySqlCommand("SELECT * from tbl_autenticacion WHERE id_usuario = '" + credencial.usuario + "' AND password = '" + credencial.password + "'", mySqlConnection);
+            MySqlCommand mySqlCommand = new MySqlCommand("SELECT * from tbl_autenticacion WHERE usuario = '" + credencial.usuario + "' AND password = '" + credencial.password + "'", mySqlConnection);
             MySqlDataReader read = mySqlCommand.ExecuteReader();
             if (read.Read()) existe = true;
             return existe;
