@@ -11,13 +11,31 @@ namespace DomestikApp.Modelo
     {
         public string numvlo {  get; set; }
         public DateTime fecha { get; set; }
-        public TimeSpan hora { get; set; }
+        private DateTime _hora = DateTime.Today;
+
+        public DateTime hora
+        {
+            get => _hora;
+            set => _hora = value;
+        }
         public string destino { get; set; }
 
         // Formatted properties for the view/database
         public string FechaFormateada => fecha.ToString("dd-MM-yyyy");
-        public string HoraFormateada => hora.ToString("HH:mm");
-
+        public string HoraFormateada
+        {
+            get
+            {
+                try
+                {
+                    return _hora.ToString("HH:mm", CultureInfo.InvariantCulture);
+                }
+                catch
+                {
+                    return "00:00"; // Default time when formatting fails
+                }
+            }
+        }
         public void SetFechaFromString(string fechaStr)
         {
             fecha = DateTime.ParseExact(fechaStr, "dd-MM-yyyy", CultureInfo.InvariantCulture);
@@ -25,7 +43,7 @@ namespace DomestikApp.Modelo
 
         public void SetHoraFromString(string horaStr)
         {
-            hora = TimeSpan.ParseExact(horaStr, "HH:mm", CultureInfo.InvariantCulture);
+            hora = DateTime.ParseExact(horaStr, "HH:mm", CultureInfo.InvariantCulture);
         }
     }
 }

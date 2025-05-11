@@ -12,6 +12,8 @@ namespace DomestikApp.Modelo {
     Turista,
     Ejecutivo
 }
+
+
     internal class Reserva
     {
         public string codigo { get; set; }
